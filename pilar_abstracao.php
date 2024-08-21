@@ -1,22 +1,55 @@
 <?php
 
-class Funicionario {
+class Funcionario {
+
+    //atributos
     public $nome= null;
     public $telefone= null;
-    public $num_filhos= null;
+    public $numFilhos=null;
 
-    function resumirCardFunc () {
-        return "Este é o resumo do funcionário";
+    //métodos
+    function setNome($nome) {
+        $this->nome = $nome;
     }
 
-    function modificarNumFilhos () {
-        return "Este é o número de filhos";
+    function getNome() {
+        return $this->nome;
+    }
+
+    function getNumFilhos() {
+        return $this->numFilhos;
+    }
+
+    function setNumFilhos($numFilhos) {
+        $this->numFilhos = $numFilhos;
+    }
+
+    function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    function getTelefone ($telefone) {
+        return $this->telefone = $telefone;
+    }
+
+    //funções e métodos
+    function resumirCardFunc () {
+        return "$this->nome  e ele possui $this->numFilhos filho(s)";
+    }
+
+    function modificarNumFilhos($numFilhos) {
+       return $this->numFilhos = $numFilhos;
     }
 
 }
 
-    $k= new funcionario ();
-    echo $k->modificarNumFilhos();
-    
+//criação do objejo funcionário
+$k= new Funcionario();
+$k->setNome('kamiya');
+$k->setNumFilhos(2);
+
+//exibição dos resultados
+echo $k->resumirCardFunc();
+echo $k->getNome() . 'possui ' . $k->getNumFilhos() . 'filhos';
 
 ?>
