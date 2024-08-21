@@ -2,37 +2,40 @@
 
 class Funcionario {
 
-    //atributos
-    public $nome= null;
-    public $telefone= null;
-    public $numFilhos=null;
+    // atributos
+    public $nome = null;
+    public $telefone = null;
+    public $numFilhos = null;
 
-    //métodos
+
+    //funções e métodos
+    //
     function setNome($nome) {
         $this->nome = $nome;
-    }
-
-    function getNome() {
-        return $this->nome;
-    }
-
-    function getNumFilhos() {
-        return $this->numFilhos;
     }
 
     function setNumFilhos($numFilhos) {
         $this->numFilhos = $numFilhos;
     }
 
-    function setTelefone($telefone) {
+    function setTelefome($telefone) {
         $this->telefone = $telefone;
     }
 
-    function getTelefone ($telefone) {
+    //armazena o valor do atributo nome
+    function getNome() {
+        return $this->nome = $nome;
+    }
+
+    function getNumFilhos() {
+        return $this->numFilhos = $numFilhos;
+    }
+
+    function getTelefone() {
         return $this->telefone = $telefone;
     }
 
-    //funções e métodos
+    //função que será conectada no echo final
     function resumirCardFunc () {
         return "$this->nome  e ele possui $this->numFilhos filho(s)";
     }
@@ -43,13 +46,21 @@ class Funcionario {
 
 }
 
-//criação do objejo funcionário
-$k= new Funcionario();
-$k->setNome('kamiya');
-$k->setNumFilhos(2);
+//o $y vai armazenar o que está nos sets, e gets
+//criar um novo funcionario
+$y= new Funcionario(); 
 
-//exibição dos resultados
-echo $k->resumirCardFunc();
-echo $k->getNome() . 'possui ' . $k->getNumFilhos() . 'filhos';
+//inserimos um nome
+$y->setNome('Edivaldo'); 
+
+//e a quantidade de filhos
+$y->setNumFilhos(42); 
+
+//aqui conectamos com a função 
+echo $y->resumirCardFunc() . "<br>"; 
+
+//daqui concatenamos e mostramos os valores que possuem
+echo $y->getNome() . ' e possui ' . $y->getNumFilhos() . ' filhos  '; 
+
 
 ?>
